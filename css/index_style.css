@@ -1,0 +1,88 @@
+body,
+html {
+    margin: 0 auto;
+    overflow: hidden;
+    height: 100%;
+}
+
+
+/*首页*/
+
+#index_logo img {
+    height: 50px;
+    width: 50px;
+}
+
+#index_title a {
+    color: #3c99d0;
+    font-weight: 100;
+    font-size: 50px;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    margin-left: -120px;
+    text-decoration: none;
+}
+
+#index_title a.active {
+    -webkit-transition: 1.5s;
+    -moz-transition: 1.5s;
+    -o-transition: 1.5s;
+    -ms-transition: 1.5s;
+    transition: 1.5s;
+    transform: scale(1.5) rotate(360deg);
+}
+
+.index_page {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    position: relative;
+}
+
+.index_page .nav {
+    height: auto;
+    position: absolute;
+    z-index: 30;
+    top: 60%;
+    left: 50%;
+    margin-left: -400px;
+}
+
+.index_page .nav a.gv {
+    text-decoration: none;
+    background: url(img/nav_gv.png) no-repeat 0px 0px;
+    display: inline-block;
+    text-align: center;
+    line-height: 43px;
+    cursor: pointer;
+    float: left;
+    /*左浮动*/
+    width: 133px;
+    height: 45px;
+    margin: 8px 2px 8px 2px;
+    font: 18px/43px 'microsoft yahei';
+    color: #066197;
+}
+
+.index_page .nav a.gv:hover {
+    background: url(img/nav_gv.png) no-repeat 0px -43px;
+    color: #3c99d0;
+    -webkit-box-shadow: 0 0 10px #1d7eb8;
+    transition-duration: 0.5s;
+}
+
+#footer {
+    color: #aaa;
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+
+#footer span {}
