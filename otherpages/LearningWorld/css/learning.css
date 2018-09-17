@@ -1,0 +1,91 @@
+/*
+div {
+    border: 1px solid red;
+}
+*/
+
+body {
+    background: rgb(253, 252, 248);
+}
+
+a {
+    color: dimgray;
+}
+
+a:hover {
+    color: aliceblue;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.clear {
+    clear: both;
+}
+
+#main_nav {
+    height: 50px;
+    background: rgb(232, 231, 227);
+}
+
+#main_nav div {
+    height: 100%;
+    cursor: pointer;
+}
+
+#main_nav div:hover {
+    color: aliceblue;
+    background: rgb(63, 63, 63);
+}
+
+#main_nav div:first-child {
+    background: rgb(63, 63, 63);
+}
+
+#main_nav div:first-child a {
+    color: aliceblue;
+}
+
+#main_nav a {
+    display: inline-block;
+    height: 100%;
+    line-height: 50px;
+    font-size: 18px;
+    width: 100%;
+}
+
+#main_nav a:hover {
+    text-decoration: none;
+}
+
+#Curriculum_name {
+    padding: 10px;
+    font-size: 16px;
+    background: #ccc;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+.left_title {
+    font-weight: 600;
+    margin: 0px;
+    padding: 5px;
+}
+
+.left_ul li {
+    padding: 3px;
+    margin: 1px;
+    cursor: pointer;
+}
+
+.left_ul li:hover {
+    background: rgb(189, 45, 48);
+    color: aliceblue;
+}
+
+.act_leftli {
+    background: rgb(189, 45, 48);
+    color: aliceblue;
+}

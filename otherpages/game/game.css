@@ -1,0 +1,350 @@
+html,
+body {
+    background: rgb(25, 25, 25);
+    
+    font-family: Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+a {
+    color: rgb(100, 100, 100);
+    text-decoration: none;
+}
+
+a,
+span {
+    cursor: pointer;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    transition: .5s;
+}
+
+a:hover,
+span:hover {
+    color: rgb(255, 255, 255);
+}
+
+.key-wrapper {
+    position: absolute;
+    top: calc(50% - 30vmin);
+    left: calc(50% - 446px);
+	-webkit-transition: 1.8s;
+    -moz-transition: 1.8s;
+    -o-transition: 1.8s;
+    -ms-transition: 1.8s;
+    transition: 1.8s;
+	transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	-o-transform-origin:100% 50%;
+	transform-origin:100% 50%;
+	z-index: 10;
+}
+.key-wrapper.hidden{
+	transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	transform:rotateY(-90deg);
+	-ms-transform:rotateY(-90deg); 	/* IE 9 */
+	-moz-transform:rotateY(-90deg); 	/* Firefox */
+	-webkit-transform:rotateY(-90deg); /* Safari 和 Chrome */
+	-o-transform:rotateY(-90deg);
+	-webkit-transition: 1.5s;
+    -moz-transition: 1.5s;
+    -o-transition: 1.5s;
+    -ms-transition: 1.5s;
+    transition: 1.5s;
+	z-index: 0;
+}
+.mygame_content {
+	width: 992px;
+	height: 500px;
+	position: absolute;
+    top: calc(50% - 30vmin);
+    left: calc(50% - 446px);
+    -o-transform-origin:0% 50%;
+	transform-origin:0% 50%;
+	transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	transform:rotateY(90deg);
+	-ms-transform:rotateY(90deg); 	/* IE 9 */
+	-moz-transform:rotateY(90deg); 	/* Firefox */
+	-webkit-transform:rotateY(90deg); /* Safari 和 Chrome */
+	-o-transform:rotateY(90deg);
+	-webkit-transition: 1.8s;
+    -moz-transition: 1.8s;
+    -o-transition: 1.8s;
+    -ms-transition: 1.8s;
+    transition: 1.8s;
+	z-index: 10;
+}
+.mygame_content.hidden{
+	transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	transform:rotateY(0deg);
+	-ms-transform:rotateY(0deg); 	/* IE 9 */
+	-moz-transform:rotateY(0deg); 	/* Firefox */
+	-webkit-transform:rotateY(0deg); /* Safari 和 Chrome */
+	-o-transform:rotateY(0deg);
+	-webkit-transition: 1.5s;
+    -moz-transition: 1.5s;
+    -o-transition: 1.5s;
+    -ms-transition: 1.5s;
+    transition: 1.5s;
+	z-index: 0;
+}
+
+.key-wrapper ul {
+    text-align: center;
+    white-space: nowrap;
+    padding-right: 40px;
+    padding: 0px;
+}
+
+li {
+    display: inline-block;
+    margin: -0.5vmin 5px;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border: 2px solid rgb(75, 75, 75);
+    border-radius: 10px;
+    line-height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    transition: .5s;
+}
+
+li:hover {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+
+[data-code="32"] {
+    width: 450px;
+}
+
+.active {
+    -webkit-transition: 0s;
+    -moz-transition: 0s;
+    -ms-transition: 0s;
+    transition: 0s;
+    transform: scale(1.15);
+}
+
+.drum {
+    border-color: rgb(0, 255, 100);
+    color: rgb(0, 255, 100);
+}
+
+.drum.active {
+    color: rgb(75, 75, 75);
+    background-color: rgb(0, 255, 100);
+}
+
+.pad {
+    border-color: rgb(255, 225, 0);
+    color: rgb(255, 225, 0);
+}
+
+.pad.active {
+    color: rgb(75, 75, 75);
+    background-color: rgb(255, 225, 0);
+}
+
+.loop {
+    border-color: rgb(255, 100, 0);
+    color: rgb(255, 100, 0);
+}
+
+.loop.active {
+    color: rgb(75, 75, 75);
+    background-color: rgb(255, 100, 0);
+}
+
+.bass {
+    border-color: rgb(255, 0, 75);
+    color: rgb(255, 0, 75);
+}
+
+.bass.active {
+    color: rgb(75, 75, 75);
+    background-color: rgb(255, 0, 75);
+}
+
+.synth {
+    border-color: rgb(150, 0, 255);
+    color: rgb(150, 0, 255);
+}
+
+.synth.active {
+    color: rgb(75, 75, 75);
+    background-color: rgb(150, 0, 255);
+}
+
+.effect {
+    border-color: rgb(0, 150, 255);
+    color: rgb(0, 150, 255);
+}
+
+.effect.active {
+    color: rgb(75, 75, 75);
+    background-color: rgb(0, 150, 255);
+}
+
+#search {
+    width: 50em;
+    height: 45px;
+    line-height: 30px;
+    background: rgba(150, 100, 100, 0.1);
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    padding-left: 0.5em;
+}
+
+#search_btn {
+    height: 47px;
+    line-height: 47px;
+    font-size: 18px;
+    letter-spacing: 5px;
+    padding: 0px 15px;
+    position: relative;
+    left: -7px;
+    top: 0px;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-left: none;
+}
+
+#title {
+    color: #888;
+    text-align: left;
+    position: absolute;
+    font-size: 40px;
+    top: 10%;
+    left: 5%;
+    width: 90%;
+    height: 60px;
+}
+
+#title div {
+    float: left;
+}
+
+#return {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+}
+
+#return img {
+    height: 100%;
+}
+
+#choose {
+    margin-left: 27%;
+    font-size: 16px;
+    height: 90%;
+    background: rgb(169, 208, 232);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#choose div {
+    height: 100%;
+    line-height: 60px;
+    padding: 0px 1.2em;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    transition: .5s;
+}
+
+#choose #my_game.active {
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    transition: .5s;
+    padding: 0px 3.5em;
+    font-size: 18px;
+    border-radius: 10px;
+    background: rgb(150, 0, 255);
+    color: #000;
+}
+
+#choose #baidu_game.active {
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    transition: .5s;
+    padding: 0px 4em;
+    font-size: 18px;
+    border-radius: 10px;
+    background: rgb(150, 0, 255);
+    color: #000;
+}
+.game_models{
+	float: left;
+	display: inline-block;
+	width: 200px;
+	height: 150px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	overflow-y: hidden;
+	margin: 20px;
+	cursor: pointer;
+	transition: 0.5s;
+}
+.game_models:hover{
+	background: #333;
+	transition: 0.5s;
+	 transform: scale(1.1);
+    -ms-transform:scale(1.1);     /* IE 9 */
+    -moz-transform:scale(1.1);     /* Firefox */
+    -webkit-transform:scale(1.1); /* Safari 和 Chrome */
+    -o-transform:scale(1.1);
+}
+.game_name{
+	text-align: center;
+	font-size: 20px;
+	height: 30px;
+	color: #eee;
+	border-bottom: 1px solid #ccc;
+}
+.game_models .game_content p{
+	color: #ccc;
+	font-size: 16px;
+	text-align: left;
+	text-indent: 2em;
+	padding: 0px 5px;
+}

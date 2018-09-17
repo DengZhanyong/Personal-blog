@@ -1,0 +1,44 @@
+var index = {
+    backgroundact: function (x, y) {
+        var x = (Math.floor(Math.random() * 10) * 1000 + Math.floor(Math.random() * 10) * 100 + Math.floor(Math.random() * 10) * 10 + Math.floor(Math.random() * 10)) % 1900;
+        var y = (Math.floor(Math.random() * 10) * 1000 + Math.floor(Math.random() * 10) * 100 + Math.floor(Math.random() * 10) * 10 + Math.floor(Math.random() * 10)) % 900;
+        var banjing = Math.floor(Math.random() * 10) % 5;
+        var boxshadow = Math.floor(Math.random() * 100) % 15;
+        var yidong = Math.floor(Math.random() * 100) % 50;
+        var div = $('<span"></span>');
+        div.css({
+            display: 'inline-block',
+            position: 'absolute',
+            background: '#fff',
+            width: banjing + 'px',
+            height: banjing + 'px',
+            top: y + 'px',
+            left: x + 'px',
+            opacity: 0,
+            borderRadius: '50%',
+            boxShadow: '0px 0px ' + boxshadow + 'px #fff'
+        }).animate({
+            opacity: 1,
+            top: y + yidong + 'px',
+            left: x - yidong / 2 + 'px',
+        }, 2000).animate({
+            opacity: 0,
+            top: y + yidong * 2 + 'px',
+            left: x - yidong + 'px',
+        }, 2000);
+        $('body').append(div);
+        setTimeout(function () {
+            div.remove();
+        }, 4000);
+
+    }
+}
+$(function () {
+    setInterval(function () {
+        var num = 50;
+        while (num > 0) {
+            index.backgroundact(200, 200);
+            num--;
+        }
+    }, 1000);
+});
