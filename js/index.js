@@ -1,7 +1,7 @@
 var index = {
     backgroundact: function (x, y) {
-        var x = (Math.floor(Math.random() * 10) * 1000 + Math.floor(Math.random() * 10) * 100 + Math.floor(Math.random() * 10) * 10 + Math.floor(Math.random() * 10)) % 1900;
-        var y = (Math.floor(Math.random() * 10) * 1000 + Math.floor(Math.random() * 10) * 100 + Math.floor(Math.random() * 10) * 10 + Math.floor(Math.random() * 10)) % 900;
+        var x = (Math.floor(Math.random() * 10) * 1000 + Math.floor(Math.random() * 10) * 100 + Math.floor(Math.random() * 10) * 10 + Math.floor(Math.random() * 10)) % parseInt($(".index_page").css('width').replace('px', ''));
+        var y = (Math.floor(Math.random() * 10) * 1000 + Math.floor(Math.random() * 10) * 100 + Math.floor(Math.random() * 10) * 10 + Math.floor(Math.random() * 10)) % parseInt($(".index_page").css('height').replace('px', ''));
         var banjing = Math.floor(Math.random() * 10) % 5;
         var boxshadow = Math.floor(Math.random() * 100) % 15;
         var yidong = Math.floor(Math.random() * 100) % 50;
