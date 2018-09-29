@@ -98,8 +98,9 @@ span:hover {
 
 .describe {
     color: #aaa;
-    font-size: 16px;
+    font-size: 14px;
     text-align: left;
     text-indent: 2em;
     padding: 0px 5px;
+    margin: 5px
 }
