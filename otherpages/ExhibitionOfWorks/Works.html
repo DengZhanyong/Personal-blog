@@ -6,6 +6,7 @@
     <title>作品展示区</title>
     <link href="Works.css" rel="stylesheet" type="text/css">
     <script src="../../js/jquery.min.js"></script>
+	<script src="worksdata.js"></script>
 </head>
 
 <body>
@@ -16,6 +17,12 @@
         <div style="clear:both;"></div>
     </div>
     <div class="mygame_content">
+		<!--作品分类标题模板-->
+		<div id="category" style="display:none;">
+			<span class="title"></span>
+			<span class="desc"></span>
+		</div>
+		<!--作品模板-->
         <div class="game_models" id="clone_models" style="display:none;">
             <div class="work_name">
                 <span>扫雷</span></div>
@@ -26,44 +33,32 @@
     </div>
     <script>
         $(function () {
-            var works = {
-                rows: [
-					{
-                        work_name: '图书馆信息网(PC版)',
-                        describe: '初学时只利用了HTML,CSS,JS,jQuery制作的，此作品也是我个人用来参加学校网页设计大赛的作品',
-                        id: '2018.5.20',
-						date:'2018-5-20',
-                        src: 'http://www.xmwweb.cn/dzy/ctbuLibrary/'
-                    },
-                    {
-                        work_name: '扫雷',
-                        describe: '利用angularJS框架实现的一个网页版扫雷，可以自定义雷区大小和地雷数量。',
-						date:'',
-                        id: '2018-8-1',
-                        src: 'http://www.xmwweb.cn/dzy/game/Minesweeper/'
-                    }, {
-                        work_name: '转盘抽奖(移动端)',
-                        describe: '为庆祝与女朋友相处两周年，为她制作的一个专属抽奖活动。',
-						date:'',
-                        id: '2018-9-17',
-                        src: 'http://www.xmwweb.cn/dzy/ToHxy/TwoYears/'
-                    }, {
-                        work_name: '绚丽时钟(PC端)',
-                        describe: '利用HTML Canvas制作的一个绚丽时钟效果，目前只有两个功能(显示当前时间和定时器)，在时钟界面按ESC键退出时钟界面。',
-                        id: 'ffff',
-						date:'2018-9-16',
-                        src: 'http://www.xmwweb.cn/dzy/Canvas/clock'
-                    }
-                ]
-            };
-            for (var i = 0; i < works.rows.length; i++) {
-                var model = $("#clone_models").clone(true);
-                model.data("src", works.rows[i].src);
-                model.find('.work_name span').text(works.rows[i].work_name);
-                model.find('.describe').text(works.rows[i].describe);
-                model.show();
-                $(".mygame_content").append(model);
-            }
+			for(var i = 0; i < works.length; i++){
+				var category = $("#category").clone(true);
+				category.find('.title').text(works[i].title);
+				category.find('.desc').text(works[i].desc);
+				category.show();
+				$(".mygame_content").append(category);
+				for(var j = 0; j < works[i].contents.length; j++){
+					var model = $("#clone_models").clone(true);
+                	model.data("src", works[i].contents[j].src);
+                	model.find('.work_name span').text(works[i].contents[j].work_name);
+                	model.find('.describe').text(works[i].contents[j].describe);
+                	model.show();
+                	$(".mygame_content").append(model);
+				}
+				$(".mygame_content").append($("<div style='clear:both;'></div>"));
+			}
+			
+			
+//            for (var i = 0; i < works.rows.length; i++) {
+//                var model = $("#clone_models").clone(true);
+//                model.data("src", works.rows[i].src);
+//                model.find('.work_name span').text(works.rows[i].work_name);
+//                model.find('.describe').text(works.rows[i].describe);
+//                model.show();
+//                $(".mygame_content").append(model);
+//            }
             //每个作品点击事件
             $(".game_models").each(function () {
                 $(this).click(function () {

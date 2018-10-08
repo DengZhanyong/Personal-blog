@@ -104,3 +104,20 @@ span:hover {
     padding: 0px 5px;
     margin: 5px
 }
+#category{
+	display: inherit;
+	color: aliceblue;
+	text-align: left;
+	border-bottom: 2px solid #eee;
+	padding-bottom: 10px;
+}
+#category .title{
+	font-size: 25px;
+	line-height: 25px;
+	padding: 5px;
+}
+#category .desc{
+	color: #aaa;
+	margin-left: 1em;
+	font-size: 13px;
+}
