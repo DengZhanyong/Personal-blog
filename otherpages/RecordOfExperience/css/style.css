@@ -1,0 +1,206 @@
+/*说明：生活记录样式表
+*时间：2018-10-17
+*/
+
+
+/*通用样式*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background: #ddd;
+}
+
+
+/*进入时的特效样式*/
+
+.indexAnimate {
+    height: 100%;
+    background: rgb(22, 22, 22);
+    overflow: hidden;
+}
+
+.indexWrapper {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.indexWrapper>div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: left;
+    transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -mox-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+.first h2,
+.first p {
+    text-align: left;
+    display: inline-block;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+/*自我简介*/
+
+#saveresume {
+    display: none;
+}
+
+
+/*顶部固定模块样式*/
+
+#Fix_top {
+    display: inline-block;
+    position: fixed;
+    left: 50%;
+    width: 350px;
+    transform: translate(-50%, 0px);
+    z-index: 1000;
+    color: #fff;
+    height: 80px;
+    text-align: center;
+    font-size: 0;
+}
+
+#Fix_top>div {
+    height: 100%;
+    display: inline-block;
+    width: 49%;
+    font-size: 20px;
+}
+
+.topLeft-Wrapper {
+    background: #fff;
+    color: #000;
+}
+
+.topRight-Wrapper {
+    background: #000;
+    color: #fff;
+}
+
+
+/*主体内容样式*/
+
+.main-Content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #aaa;
+    font-size: 0;
+    text-align: center;
+}
+
+
+/*中间导航样式*/
+
+.fixNav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 60%;
+    width: 80px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -mox-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.LinkBtn {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin: 8px;
+    transition: ease-in 0.3s;
+    -moz-transition: ease-in 0.3s;
+    -webkit-transition: ease-in 0.3s;
+    -o-transition: ease-in 0.3s;
+}
+
+.LinkBtn:hover,
+.LinkBtn_active {
+    cursor: pointer;
+    box-shadow: 0 0 3px #000;
+    transition: ease-out 0.3s;
+    -moz-transition: ease-out 0.3s;
+    -webkit-transition: ease-out 0.3s;
+    -o-transition: ease-out 0.3s;
+    transform: scale(1.3, 1.3);
+    -moz-transform: scale(1.3, 1.3);
+    -webkit-transform: scale(1.3, 1.3);
+    -o-transform: scale(1.3, 1.3);
+}
+
+
+/*外包包含框*/
+
+.LeftWrapper,
+.RightWrapper {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    font-size: 16px;
+    text-align: center;
+    align-items: center;
+    position: relative;
+}
+
+
+/*左右边主体内容*/
+
+.MainLeft,
+.MainRight {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+}
+
+.MainLeft {
+    background: #888;
+    top: 0;
+}
+
+.MainRight {
+    background: #777;
+    bottom: 0;
+}
+
+
+/*每个模块的演示*/
+
+.leftConWrapper,
+.rightConWrapper {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 30px;
+    text-align: center;
+}
