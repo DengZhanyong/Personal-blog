@@ -29,9 +29,16 @@ var works = [
             {
                 work_name: '扫雷',
                 describe: '利用angularJS框架实现的一个网页版扫雷，可以自定义雷区大小和地雷数量。',
-                date: '',
+                date: '2018-8-1',
                 id: '2018-8-1',
                 src: 'http://www.xmwweb.cn/dzy/game/Minesweeper/'
+            },
+			{
+                work_name: '2018()',
+                describe: '自己制作的一个2048游戏，目前只是初版本，只支持PC版,移动版明日制作2018-10-16',
+                date: '2018-10-15',
+                id: '2018-8-1',
+                src: 'http://www.xmwweb.cn/dzy/game/2048/'
             }
 		]
 	},
