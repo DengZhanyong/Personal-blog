@@ -50,21 +50,16 @@ function OneByOne(str, speed) { //初级版
     }
 }
 //改进版 ----参数：字符串,输出速度,要添加的父节点，创建指定节点
-function OneByOneEle(str, speed, parentElement, creatElement) {
-    var SingeText = [];
-    var createnode = $(creatElement);
-    $(parentElement).append(createnode);
-    for (let i = 0; i < str.length; i++) {
-        (function (i, onestr) {
-
+function OneByOneEle(str, speed, node) {
+    console.log(str);
+    node.text('');
+    $("#saveresume pre").append(node);
+    for (let n = 0; n <= str.length; n++) {
+        (function (n, flagstr) {
             setTimeout(function () {
-                var text = createnode.text();
-                createnode.text(text + onestr);
-                if (i == str.length - 1)
-                    createnode.after('<br/>');
-            }, i * speed)
-
-        })(i, str.substr(i, 1))
+                node.text(flagstr);
+            }, n * speed);
+        })(n, str.substr(0, n))
     }
 }
 

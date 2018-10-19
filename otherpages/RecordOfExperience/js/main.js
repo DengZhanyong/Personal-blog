@@ -26,7 +26,6 @@ CreateNode.prototype = {
 $(function () {
     setCSS();
     AllEvent(); //所有事件函数
-
     indexPage(); //加载引导界面特效
 });
 
@@ -64,12 +63,11 @@ function setCSS() {
 /*加载首页*/
 function indexPage() {
     firstParagraph(); //第一段话
-    LoadResume(); //加载个人简历
 }
 //第一段话
 function firstParagraph() {
     var SingleSentence = Introduction.split('<br/>'); //获取第一段话个内容
-    var speed = 120; //每个字输出时间
+    var speed = 80; //每个字输出时间
     var SentenceSpeed = speed * 4;
     var setTime = 0; //计算每句话的延时时间
     for (let i = 0; i < SingleSentence.length; i++) {
@@ -88,6 +86,7 @@ function firstParagraph() {
                 Blink($(".cursor"), 2000, 500); //执行到最后一句话时再执行5s闪烁光标
                 setTimeout(function () { //关闭第一段话
                     $('.first').slideUp();
+                    LoadResume() //开始自我介绍
                 }, 2000);
             }, (setTime + SingleSentence[i].length) * speed + i * SentenceSpeed);
         }
@@ -96,8 +95,33 @@ function firstParagraph() {
 
 //加载简历
 function LoadResume() {
-    $("#saveresume").append(resume);
-}
+    $("#saveresume").slideDown();
+    var sentences = resume.replace(/></g, '>^^<');
+    console.log(sentences);
+    sentences = sentences.split('^^');
+    //    console.log(sentences);
+    //    var time = 0;
+    //    for (let i = 0; i < sentences.length; i++) {
+    //        if (i)
+    //            time += sentences[i - 1].length * 200;
+    //        setTimeout(function () {
+    //            $("#saveresume pre").append(sentences[i]);
+    //        }, i ? time : 0);
+    //    }
+
+    var speed = 120; //每个字输出时间
+    var SentenceSpeed = speed * 4;
+    var setTime = 0; //计算每句话的延时时间
+    console.log(sentences);
+    for (let i = 0; i < sentences.length; i++) {
+        console.log($(sentences[i]).text());
+        if (i)
+            setTime += $(sentences[i]).text().length;
+        setTimeout(function () {
+            OneByOneEle($(sentences[i]).text(), speed, $(sentences[i])); //调用单子输出函数
+        }, i ? (setTime * speed + i * SentenceSpeed) : 0);
+    }
+};
 
 /*所有事件函数*/
 function AllEvent() {
