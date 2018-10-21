@@ -204,3 +204,98 @@ body {
     padding: 30px;
     text-align: center;
 }
+/*个人简历样式*/
+#saveresume{
+	min-width: 40%;
+	max-width: 50%;
+	height: auto;
+	max-height: 80%;
+	overflow-y: auto;
+	border: 1px solid #eee; 
+}
+pre{
+	display: block; 
+    overflow: auto; 
+    padding: 5px 10px; 
+    
+    whitewhite-space:pre-wrap; /* css-3 */    
+    whitewhite-space:-moz-pre-wrap; /* Mozilla, since 1999 */    
+    whitewhite-space:-pre-wrap; /* Opera 4-6 */    
+    whitewhite-space:-o-pre-wrap; /* Opera 7 */    
+    word-wrap:break-word; /* Internet Explorer 5.5+ */  
+    white-space: pre-wrap; /* Firefox */ 
+}
+#saveresume p{
+	font-size: 18px;
+	text-indent: 2em;
+	line-height: 1.5em;
+	max-width: 100%;
+	color: #ccc;
+	word-wrap: break-word;
+  	word-break: break-all;
+}
+#saveresume p span{
+	color: red;
+}
+#saveresume h2{
+	line-height: 1.4em;
+	font-size: 24px;
+	margin-top: 5px;
+	color: rgb(230,201,190);
+	border-bottom: 2px solid rgb(230,201,190);
+	margin-bottom: 5px;
+	margin-top: 10px;
+}
+/*按钮效果动画*/
+#Down_switch{
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%,0);
+	top: 93%;
+	border:1px solid #aaa;
+	font-size: 18px;
+	padding: 5px;
+	cursor: pointer;
+}
+
+#Down_switch .btn {
+  border: none;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #222;
+  padding: 17px 60px;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+}
+
+#Down_switch .btn span {
+  position: relative; 
+  z-index: 1;
+}
+
+#Down_switch .btn:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 490%;
+  width: 140%;
+  background: #78c7d2;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+
+#Down_switch .btn:hover:after {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}

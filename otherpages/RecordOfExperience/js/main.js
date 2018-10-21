@@ -67,7 +67,7 @@ function indexPage() {
 //第一段话
 function firstParagraph() {
     var SingleSentence = Introduction.split('<br/>'); //获取第一段话个内容
-    var speed = 80; //每个字输出时间
+    var speed = 60; //每个字输出时间
     var SentenceSpeed = speed * 4;
     var setTime = 0; //计算每句话的延时时间
     for (let i = 0; i < SingleSentence.length; i++) {
@@ -97,7 +97,6 @@ function firstParagraph() {
 function LoadResume() {
     $("#saveresume").slideDown();
     var sentences = resume.replace(/></g, '>^^<');
-    console.log(sentences);
     sentences = sentences.split('^^');
     //    console.log(sentences);
     //    var time = 0;
@@ -109,19 +108,26 @@ function LoadResume() {
     //        }, i ? time : 0);
     //    }
 
-    var speed = 120; //每个字输出时间
-    var SentenceSpeed = speed * 4;
+    var speed = 50; //每个字输出时间
+    var SentenceSpeed = speed * 3;
     var setTime = 0; //计算每句话的延时时间
-    console.log(sentences);
+   	var s = setInterval(function(){
+		$("#saveresume").scrollTop($("#saveresume pre").height());
+	}, 100);
     for (let i = 0; i < sentences.length; i++) {
-        console.log($(sentences[i]).text());
         if (i)
-            setTime += $(sentences[i]).text().length;
+            setTime += $(sentences[i-1]).text().length*speed+SentenceSpeed;
         setTimeout(function () {
             OneByOneEle($(sentences[i]).text(), speed, $(sentences[i])); //调用单子输出函数
-        }, i ? (setTime * speed + i * SentenceSpeed) : 0);
+			if(i == sentences.length-1)
+				setTimeout(function(){
+					clearInterval(s);
+					//$('.indexAnimate').slideUp();
+				},sentences[i].length*speed);
+        }, i ? (setTime) : 0);
     }
 };
+
 
 /*所有事件函数*/
 function AllEvent() {
@@ -159,4 +165,10 @@ function AllEvent() {
         });
 
     });
+	
+	//动画页与静态页切换
+	$("#Down_switch").click(function(){
+		$('.indexAnimate').slideUp();
+	});
+	
 }

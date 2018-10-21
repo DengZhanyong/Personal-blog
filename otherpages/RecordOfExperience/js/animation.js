@@ -51,7 +51,6 @@ function OneByOne(str, speed) { //初级版
 }
 //改进版 ----参数：字符串,输出速度,要添加的父节点，创建指定节点
 function OneByOneEle(str, speed, node) {
-    console.log(str);
     node.text('');
     $("#saveresume pre").append(node);
     for (let n = 0; n <= str.length; n++) {
