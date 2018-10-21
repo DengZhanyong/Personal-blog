@@ -67,7 +67,7 @@ function indexPage() {
 //第一段话
 function firstParagraph() {
     var SingleSentence = Introduction.split('<br/>'); //获取第一段话个内容
-    var speed = 60; //每个字输出时间
+    var speed = 20; //每个字输出时间
     var SentenceSpeed = speed * 4;
     var setTime = 0; //计算每句话的延时时间
     for (let i = 0; i < SingleSentence.length; i++) {
@@ -108,7 +108,7 @@ function LoadResume() {
     //        }, i ? time : 0);
     //    }
 
-    var speed = 50; //每个字输出时间
+    var speed = 5; //每个字输出时间
     var SentenceSpeed = speed * 3;
     var setTime = 0; //计算每句话的延时时间
    	var s = setInterval(function(){
@@ -122,6 +122,7 @@ function LoadResume() {
 			if(i == sentences.length-1)
 				setTimeout(function(){
 					clearInterval(s);
+					EndResume();//加载完个人简历后续动画效果
 					//$('.indexAnimate').slideUp();
 				},sentences[i].length*speed);
         }, i ? (setTime) : 0);
@@ -169,6 +170,12 @@ function AllEvent() {
 	//动画页与静态页切换
 	$("#Down_switch").click(function(){
 		$('.indexAnimate').slideUp();
+		$('.main').show();
 	});
+	$("#Up_switch").click(function(){
+		$('.indexAnimate').slideDown();
+		$('.main').slideUp();
+	});
+	
 	
 }

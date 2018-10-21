@@ -79,3 +79,8 @@ function Blink(element, time, frequency) {
         element.hide();
     }, time);
 }
+
+//加载完个人简历后续动画效果
+function EndResume(){
+	$('#Down_switch').show(1000); //显示向下按钮
+}
