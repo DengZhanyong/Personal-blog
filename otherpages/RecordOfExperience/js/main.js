@@ -67,7 +67,7 @@ function indexPage() {
 //第一段话
 function firstParagraph() {
     var SingleSentence = Introduction.split('<br/>'); //获取第一段话个内容
-    var speed = 20; //每个字输出时间
+    var speed = 80; //每个字输出时间
     var SentenceSpeed = speed * 4;
     var setTime = 0; //计算每句话的延时时间
     for (let i = 0; i < SingleSentence.length; i++) {
@@ -83,11 +83,11 @@ function firstParagraph() {
         if (i == SingleSentence.length - 1) {
             setTimeout(function () {
                 $('.cursor').prev().remove();
-                Blink($(".cursor"), 2000, 500); //执行到最后一句话时再执行5s闪烁光标
+                Blink($(".cursor"), 1500, 500); //执行到最后一句话时再执行5s闪烁光标
                 setTimeout(function () { //关闭第一段话
                     $('.first').slideUp();
                     LoadResume() //开始自我介绍
-                }, 2000);
+                }, 1500);
             }, (setTime + SingleSentence[i].length) * speed + i * SentenceSpeed);
         }
     }
@@ -108,23 +108,23 @@ function LoadResume() {
     //        }, i ? time : 0);
     //    }
 
-    var speed = 5; //每个字输出时间
+    var speed = 35; //每个字输出时间
     var SentenceSpeed = speed * 3;
     var setTime = 0; //计算每句话的延时时间
-   	var s = setInterval(function(){
-		$("#saveresume").scrollTop($("#saveresume pre").height());
-	}, 100);
+    var s = setInterval(function () {
+        $("#saveresume").scrollTop($("#saveresume pre").height());
+    }, 100);
     for (let i = 0; i < sentences.length; i++) {
         if (i)
-            setTime += $(sentences[i-1]).text().length*speed+SentenceSpeed;
+            setTime += $(sentences[i - 1]).text().length * speed + SentenceSpeed;
         setTimeout(function () {
             OneByOneEle($(sentences[i]).text(), speed, $(sentences[i])); //调用单子输出函数
-			if(i == sentences.length-1)
-				setTimeout(function(){
-					clearInterval(s);
-					EndResume();//加载完个人简历后续动画效果
-					//$('.indexAnimate').slideUp();
-				},sentences[i].length*speed);
+            if (i == sentences.length - 1)
+                setTimeout(function () {
+                    clearInterval(s);
+                    EndResume(); //加载完个人简历后续动画效果
+                    //$('.indexAnimate').slideUp();
+                }, sentences[i].length * speed);
         }, i ? (setTime) : 0);
     }
 };
@@ -166,16 +166,16 @@ function AllEvent() {
         });
 
     });
-	
-	//动画页与静态页切换
-	$("#Down_switch").click(function(){
-		$('.indexAnimate').slideUp();
-		$('.main').show();
-	});
-	$("#Up_switch").click(function(){
-		$('.indexAnimate').slideDown();
-		$('.main').slideUp();
-	});
-	
-	
+
+    //动画页与静态页切换
+    $("#Down_switch").click(function () {
+        $('.indexAnimate').slideUp();
+        $('.main').show();
+    });
+    $("#Up_switch").click(function () {
+        $('.indexAnimate').slideDown();
+        $('.main').slideUp();
+    });
+
+
 }

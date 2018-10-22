@@ -2,4 +2,54 @@
     h2 {
         font-size: 14px;
     }
+	#saveresume {
+    	min-width: 90%;
+    	max-height: 80%;
+		transform: translate(-50%,-55%);
+	}
+	#saveresume p{
+		font-size: 14px;
+	}
+	#Down_switch,#Up_switch{
+    	font-size: 14px;
+    	padding: 2px;
+	}
+
+	.btn{
+		font-size: 12px;
+		padding: 5px 10px;
+	}
+	@keyframes downswitch {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.01), 0 0 0 8px rgba(255, 255, 255, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1), 0 0 0 13px rgba(255, 255, 255, 0);
+    }
+}
+
+@keyframes upswitch {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.01), 0 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1), 0 0 0 13px rgba(0, 0, 0, 0);
+    }
+}
+	
+	/*静态简历部分*/
+	#Fix_top{
+		width: 105%;
+		height: 50px;
+	}
+	#Fix_top>div span{
+		font-size: 25px;
+		letter-spacing: 10px;
+	}
+	
+	.fixNav span{
+		width: 20px;
+		height: 20px;
+	}
+
 }
