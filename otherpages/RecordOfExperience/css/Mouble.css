@@ -1,14 +1,22 @@
 @media screen and (max-width: 700px) {
-    h2 {
-        font-size: 14px;
-    }
+	.first{
+		width: 80%;
+	}
+	.first p{
+		font-size: 18px;
+	}
+	
 	#saveresume {
     	min-width: 90%;
     	max-height: 80%;
 		transform: translate(-50%,-55%);
 	}
+	#saveresume h2{
+		font-size: 18px;
+	}
+	
 	#saveresume p{
-		font-size: 14px;
+		font-size: 12px;
 	}
 	#Down_switch,#Up_switch{
     	font-size: 14px;
