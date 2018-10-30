@@ -28,15 +28,22 @@ body {
 
 
 /*进入时的特效样式*/
-
 .indexAnimate {
     height: 100%;
-    background: rgb(22, 22, 22);
+    background: rgb(255,255,255);
     overflow: hidden;
+	color:#000;
+}
+.indexWrapper-second {
+	transition: 3.5s ease-in;
+	-moz-transition: 3.5s ease-in;
+	-webkit-transition: 3.5s ease-in;
+	-0-transition: 3.5s ease-in;
+    background: rgb(22, 22, 22);
+	color:#fff;
 }
 
 .indexWrapper {
-    color: #fff;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -67,6 +74,16 @@ body {
 
 #saveresume {
     display: none;
+}
+#saveresume pre a{
+	transition: 3.5s ease-in;
+	-moz-transition: 3.5s ease-in;
+	-webkit-transition: 3.5s ease-in;
+	-0-transition: 3.5s ease-in;
+	color: rgb(216,128,39);
+}
+#saveresume pre b{
+	color: #ccc;
 }
 
 

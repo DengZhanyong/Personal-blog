@@ -67,7 +67,7 @@ function indexPage() {
 //第一段话
 function firstParagraph() {
     var SingleSentence = Introduction.split('<br/>'); //获取第一段话个内容
-    var speed = 80; //每个字输出时间
+    var speed = 150; //每个字输出时间
     var SentenceSpeed = speed * 4;
     var setTime = 0; //计算每句话的延时时间
     for (let i = 0; i < SingleSentence.length; i++) {
@@ -84,10 +84,11 @@ function firstParagraph() {
             setTimeout(function () {
                 $('.cursor').prev().remove();
                 Blink($(".cursor"), 1500, 500); //执行到最后一句话时再执行5s闪烁光标
+				$(".indexWrapper").addClass('indexWrapper-second');
                 setTimeout(function () { //关闭第一段话
                     $('.first').slideUp();
                     LoadResume() //开始自我介绍
-                }, 1500);
+                }, 4000);
             }, (setTime + SingleSentence[i].length) * speed + i * SentenceSpeed);
         }
     }
@@ -109,7 +110,7 @@ function LoadResume() {
     //    }
 
     var speed = 35; //每个字输出时间
-    var SentenceSpeed = speed * 3;
+    var SentenceSpeed = speed * 10;
     var setTime = 0; //计算每句话的延时时间
     var s = setInterval(function () {
         $("#saveresume").scrollTop($("#saveresume pre").height());
@@ -123,6 +124,10 @@ function LoadResume() {
                 setTimeout(function () {
                     clearInterval(s);
                     EndResume(); //加载完个人简历后续动画效果
+					$("#saveresume pre").empty();
+					$("#saveresume pre").addClass('.pre-second');
+					$("#saveresume pre").append($(resume));
+					
                     //$('.indexAnimate').slideUp();
                 }, sentences[i].length * speed);
         }, i ? (setTime) : 0);
@@ -170,7 +175,7 @@ function AllEvent() {
     //动画页与静态页切换
     $("#Down_switch").click(function () {
         $('.indexAnimate').slideUp();
-        $('.main').show();
+        $('.main').slideDown();
     });
     $("#Up_switch").click(function () {
         $('.indexAnimate').slideDown();
