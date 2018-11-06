@@ -32,13 +32,6 @@ var works = [
                 date: '2018-8-1',
                 id: '2018-8-1',
                 src: 'http://www.xmwweb.cn/dzy/game/Minesweeper/'
-            },
-			{
-                work_name: '2018()',
-                describe: '自己制作的一个2048游戏，目前只是初版本，只支持PC版,移动版明日制作2018-10-16',
-                date: '2018-10-15',
-                id: '2018-8-1',
-                src: 'http://www.xmwweb.cn/dzy/game/2048/'
             }
 		]
 	},
@@ -57,11 +50,31 @@ var works = [
 		]
 	},
     {
-        title: "正在学习中",
+        title: "正在制作中",
         id: "",
         desc: "暂无说明",
         contents: [
-
+            {
+                work_name: '个人简历',
+                describe: '利用HTML,CSS,JS,JQ制作的一个网页版个人简历，重点放在动画特效方面的制作，正在逐步构想动画效果',
+                id: '',
+                date: '2018-10-18',
+                src: 'http://www.xmwweb.cn/otherpages/RecordOfExperience/index.html'
+            },
+            {
+                work_name: '可视化布局编辑器',
+                describe: '完全独立制作的一个可视化布局编辑器，可快速实现前端布局的，提高开发效率，目前已完成基础布局和组件的自定义和浏览功能',
+                id: '',
+                date: '2018-10-19',
+                src: 'http://www.xmwweb.cn/dzy/tools/CustomLayoutEditor/index.html'
+            },
+            {
+                work_name: '2048',
+                describe: '自己制作的一个2048游戏，目前只是初版本',
+                date: '2018-10-15',
+                id: '2018-8-1',
+                src: 'http://www.xmwweb.cn/dzy/game/2048/'
+            }
 		]
 	}
 ];
