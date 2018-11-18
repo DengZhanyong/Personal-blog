@@ -96,6 +96,15 @@ span:hover {
     color: #eee;
     border-bottom: 1px solid #ccc;
 }
+.work_name .logo{
+	height: 80%;
+	position: relative;
+	top: 5px;
+	border-radius: 50%;
+}
+.work_name .logo:hover{
+	background: rgb(255,248,140);
+}
 
 .describe {
     color: #aaa;

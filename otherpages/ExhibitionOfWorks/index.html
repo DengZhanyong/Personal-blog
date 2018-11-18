@@ -28,7 +28,9 @@
         <!--作品模板-->
         <div class="game_models" id="clone_models" style="display:none;">
             <div class="work_name">
-                <span>标题</span></div>
+                <span class="title">标题</span>
+				<span><img src="images/githublogo.png" class="logo"></span>
+			</div>
             <div class="game_content">
                 <p class="describe">作品描述。</p>
             </div>
@@ -51,7 +53,9 @@
                     var model = $("#clone_models").clone(true);
                     model.removeAttr('id');
                     model.data("src", works[i].contents[j].src);
-                    model.find('.work_name span').text(works[i].contents[j].work_name);
+                    model.find('.work_name .title').text(works[i].contents[j].work_name);
+					model.find('.work_name .logo').data("src", works[i].contents[j].githubSrc);
+//                    model.find('.work_name .githubSrc').attr("src",works[i].contents[j].githubSrc);
                     model.find('.describe').text(works[i].contents[j].describe);
                     model.show();
                     $(".mygame_content").append(model);
@@ -71,7 +75,22 @@
             //每个作品点击事件
             $(".game_models").each(function () {
                 $(this).click(function () {
-                    window.open($(this).data('src'));
+					if($(this).data('src')){
+                    	window.open($(this).data('src'));
+					}else{
+						alert("此作品无法预览");
+					}
+                });
+            });
+			//每个作品的github地址
+			$(".work_name .logo").each(function () {
+                $(this).click(function (e) {
+					e.stopPropagation();
+					if($(this).data('src')){
+                    	window.open($(this).data('src'));
+					}else{
+						alert("该作品的Github不存在");
+					}
                 });
             });
             //返回上一级页面
