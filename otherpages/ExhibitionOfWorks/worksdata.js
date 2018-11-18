@@ -84,7 +84,7 @@ var works = [
             },
             {
                 work_name: '2048',
-				githubSrc:'https://github.com/CTBUdzy/HTML-Canvas',
+				githubSrc:'https://github.com/CTBUdzy/Personal-game',
                 describe: '利用基础的HTML/css/js/jq制作的一个2048游戏，目前只是初版本',
                 date: '2018-10-15',
                 id: '2018-8-1',
