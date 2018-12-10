@@ -16,6 +16,9 @@ body {
     width: 100%;
     overflow: hidden;
 }
+.clear{
+	clear: both;
+}
 
 .main {
     position: relative;
@@ -233,6 +236,32 @@ body {
     text-align: center;
 }
 
+.leftConWrapper .contentWrapper{
+	width: 100%;
+}
+.contentWrapper .title{
+	margin-bottom: 10px;
+	font-size: 30px;
+}
+.contentWrapper .Head_port_wrp{
+	width: 20%;
+	float: left;
+	margin-left: 20%;
+}
+.Head_port_wrp img{
+	width: 100%;
+}
+.contentWrapper .text_con{
+	text-align: left;
+	margin-left: 5%;
+	float: left;
+	width: 50%;
+}
+.text_con p{
+	line-height: 1.8em;
+	font-size: 20px;
+	font-weight: 400;
+}
 
 /*个人简历样式*/
 

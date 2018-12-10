@@ -59,5 +59,44 @@
 		width: 20px;
 		height: 20px;
 	}
+	
+	/*每个单独模块*/
+	.leftConWrapper,
+	.rightConWrapper {
+		display: flex;
+		align-items: center;
+		box-sizing: border-box;
+		padding: 5px;
+		text-align: center;
+	}
+	.leftConWrapper .contentWrapper{
+		width: 100%;
+	}
+	.contentWrapper .title{
+		margin-bottom: 10px;
+		font-size: 20px;
+	}
+	.contentWrapper .content{
+		width: 100%;
+		text-align: center;
+	}
+	.contentWrapper .Head_port_wrp{
+		width: 100%;
+		text-align: center;
+		float: none;
+	}
+	.Head_port_wrp img{
+		width: 50%;
+	}
+	.contentWrapper .text_con{
+		text-align: left;
+		margin-left: 5%;
+		width: 85%;
+	}
+	.text_con p{
+		line-height: 1.8em;
+		font-size: 14px;
+		font-weight: 400;
+	}
 
 }

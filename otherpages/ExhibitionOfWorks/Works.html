@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>作品展示区</title>
+    <link href="Works.css" rel="stylesheet" type="text/css">
+    <script src="../../js/jquery.min.js"></script>
+    <script src="worksdata.js"></script>
+</head>
+
+<body>
+    <div id="title">
+        <div>
+            <span id="return"><img src="../../images/return.png"></span>作品展示
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+    <div class="mygame_content">
+        <!--作品分类标题模板-->
+        <div id="category" style="display:none;" class="category_model">
+            <div class="title_wraper">
+                <span class="title"></span>
+                <div class="circle"></div>
+            </div>
+            <span class="desc"></span>
+        </div>
+        <!--作品模板-->
+        <div class="game_models" id="clone_models" style="display:none;">
+            <div class="work_name">
+                <span class="title">标题</span>
+				<span><img src="images/githublogo.png" class="logo"></span>
+			</div>
+            <div class="game_content">
+                <p class="describe">作品描述。</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            for (var i = 0; i < works.length; i++) {
+                var category = $("#category").clone(true);
+                category.removeAttr('id');
+                category.find('.title').text(works[i].title);
+                category.find('.desc').text(works[i].desc);
+                category.show();
+                $(".mygame_content").append(category);
+                if (works[i].contents.length == 0) {
+                    var nocontent = $('<P class="noContent">暂无内容......</p>');
+                    $(".mygame_content").append(nocontent);
+                }
+                for (var j = 0; j < works[i].contents.length; j++) {
+                    var model = $("#clone_models").clone(true);
+                    model.removeAttr('id');
+                    model.data("src", works[i].contents[j].src);
+                    model.find('.work_name .title').text(works[i].contents[j].work_name);
+					model.find('.work_name .logo').data("src", works[i].contents[j].githubSrc);
+//                    model.find('.work_name .githubSrc').attr("src",works[i].contents[j].githubSrc);
+                    model.find('.describe').text(works[i].contents[j].describe);
+                    model.show();
+                    $(".mygame_content").append(model);
+                }
+                $(".mygame_content").append($("<div style='clear:both;'></div>"));
+            }
+
+
+            //            for (var i = 0; i < works.rows.length; i++) {
+            //                var model = $("#clone_models").clone(true);
+            //                model.data("src", works.rows[i].src);
+            //                model.find('.work_name span').text(works.rows[i].work_name);
+            //                model.find('.describe').text(works.rows[i].describe);
+            //                model.show();
+            //                $(".mygame_content").append(model);
+            //            }
+            //每个作品点击事件
+            $(".game_models").each(function () {
+                $(this).click(function () {
+					if($(this).data('src')){
+                    	window.open($(this).data('src'));
+					}else{
+						alert("此作品无法预览");
+					}
+                });
+            });
+			//每个作品的github地址
+			$(".work_name .logo").each(function () {
+                $(this).click(function (e) {
+					e.stopPropagation();
+					if($(this).data('src')){
+                    	window.open($(this).data('src'));
+					}else{
+						alert("该作品的Github不存在");
+					}
+                });
+            });
+            //返回上一级页面
+            $("#return").click(function () {
+                window.history.go(-1);
+            });
+        });
+    </script>
+</body>
+
+</html>
