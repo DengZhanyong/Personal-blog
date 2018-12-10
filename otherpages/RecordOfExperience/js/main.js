@@ -67,8 +67,8 @@ function indexPage() {
 //第一段话
 function firstParagraph() {
     var SingleSentence = Introduction.split('<br/>'); //获取第一段话个内容
-   // var speed = 150; //每个字输出时间
-	 var speed = 1; //每个字输出时间
+    var speed = 150; //每个字输出时间
+	// var speed = 1; //每个字输出时间
     var SentenceSpeed = speed * 4;
     var setTime = 0; //计算每句话的延时时间
     for (let i = 0; i < SingleSentence.length; i++) {
@@ -110,8 +110,8 @@ function LoadResume() {
     //        }, i ? time : 0);
     //    }
 
-   // var speed = 35; //每个字输出时间
-	var speed = 1; //每个字输出时间
+    var speed = 35; //每个字输出时间
+	//var speed = 1; //每个字输出时间
     var SentenceSpeed = speed * 10;
     var setTime = 0; //计算每句话的延时时间
     var s = setInterval(function () {
